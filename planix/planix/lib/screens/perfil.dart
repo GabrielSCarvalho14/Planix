@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:planix/components/customOptionButton.dart';
 import 'package:planix/components/textStyle.dart';
+import 'package:planix/controllers/userController.dart';
 import 'package:planix/screens/mudarEmail.dart';
 import 'package:planix/screens/mudarSenha.dart';
-import 'package:planix/screens/plannerPessoal.dart';
-import 'package:planix/screens/sugest%C3%B5esDuvidas.dart';
+import 'package:planix/screens/sugestoesDuvidas.dart';
+import 'package:planix/screens/telaInicial.dart';
 
 class Perfil extends StatelessWidget {
   const Perfil({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final userController = UserController.instance;
+    final String nomeUsuario = userController.getNomeUsuario();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff2D5186),
@@ -84,7 +88,7 @@ class Perfil extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Text(
-                            'Débora Lira',
+                            nomeUsuario.isNotEmpty ? nomeUsuario : 'Usuário', 
                             style: txtPoppinsWhite(30),
                           ),
                         ],
@@ -103,14 +107,14 @@ class Perfil extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 60,),
-                  CustomOptionButton(icon: Icons.lock_outline, text: 'Mudar senha', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const MudarSenha()),);}),
-                  CustomOptionButton(icon: Icons.email_outlined, text: 'Endereço de Email', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const MudarEmail()),);}),
-                  CustomOptionButton(icon: Icons.sentiment_very_satisfied, text: 'Sugestões e Duvidas', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const SugestoesDuvidas()),);}),
-                  CustomOptionButton(icon: Icons.exit_to_app, text: 'Sair', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const PlannerPessoal()),);}),
+                  CustomOptionButton(icon: Icons.lock_outline, text: 'Mudar senha', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const MudarSenha()),);} ),
+                  CustomOptionButton(icon: Icons.email_outlined, text: 'Endereço de Email', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const MudarEmail()),);} ),
+                  CustomOptionButton(icon: Icons.sentiment_very_satisfied, text: 'Sugestões e Duvidas', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const SugestoesDuvidas()),);} ),
+                  CustomOptionButton(icon: Icons.exit_to_app, text: 'Sair', onTap: () {Navigator.push(context,MaterialPageRoute(builder: (context) => const TelaInicial()),);} ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

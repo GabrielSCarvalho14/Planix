@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:planix/components/card.dart';
 import 'package:planix/components/switchButton.dart';
 import 'package:planix/components/textStyle.dart';
+import 'package:planix/controllers/userController.dart';
 import 'package:planix/screens/ganhos.dart';
 import 'package:planix/screens/gastos.dart';
 import 'package:planix/screens/perfil.dart';
@@ -13,6 +14,8 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = UserController.instance;
+    final String nomeUsuario = userController.getNomeUsuario();
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Color(0xff2D5287)),
@@ -43,7 +46,7 @@ class Dashboard extends StatelessWidget {
         child: ListView(
           children: [
             Text(
-              "Olá, Débora",
+              "Olá, ${nomeUsuario.isNotEmpty ? nomeUsuario : 'Usuário'}",
               style: txtDonglePreto(45),
             ),
             Text(

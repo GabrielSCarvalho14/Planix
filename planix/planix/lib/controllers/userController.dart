@@ -28,7 +28,7 @@ class UserController with ChangeNotifier {
   // Método para cadastrar o usuário na API
   Future<bool> cadastrar(String username, String email, String password) async {
     final url = Uri.parse(
-        'https://01d75781-3aac-4da8-840e-f329c0f1b732-00-wk2is7bchmpu.worf.replit.dev/cadastro');
+        'https://13359055-906e-4585-9ab1-eb88fc2281f3-00-fdifq982mbt.worf.replit.dev/cadastro');
 
     try {
       final response = await http.post(
@@ -58,7 +58,7 @@ class UserController with ChangeNotifier {
   // Método para fazer login
   Future<bool> login(String email, String password) async {
     final url = Uri.parse(
-        'https://01d75781-3aac-4da8-840e-f329c0f1b732-00-wk2is7bchmpu.worf.replit.dev/login');
+        'https://13359055-906e-4585-9ab1-eb88fc2281f3-00-fdifq982mbt.worf.replit.dev/login');
 
     try {
       final response = await http.post(
@@ -105,7 +105,7 @@ class UserController with ChangeNotifier {
     String nomeUsuario = getNomeUsuario(); // Recuperando o nome do usuário
 
     final url = Uri.parse(
-        'https://01d75781-3aac-4da8-840e-f329c0f1b732-00-wk2is7bchmpu.worf.replit.dev/$nomeUsuario/esqueci-senha');
+        'https://13359055-906e-4585-9ab1-eb88fc2281f3-00-fdifq982mbt.worf.replit.dev/$nomeUsuario/esqueci-senha');
 
     try {
       final response = await http.post(
@@ -136,7 +136,7 @@ class UserController with ChangeNotifier {
     String nomeUsuario = getNomeUsuario(); // Recuperando o nome do usuário
 
     final url = Uri.parse(
-        'https://01d75781-3aac-4da8-840e-f329c0f1b732-00-wk2is7bchmpu.worf.replit.dev/$nomeUsuario/atualizar-senha');
+        'https://13359055-906e-4585-9ab1-eb88fc2281f3-00-fdifq982mbt.worf.replit.dev/$nomeUsuario/atualizar-senha');
 
     try {
       final response = await http.put(
@@ -169,7 +169,7 @@ class UserController with ChangeNotifier {
     String nomeUsuario = getNomeUsuario(); // Recuperando o nome do usuário
 
     final url = Uri.parse(
-        'https://01d75781-3aac-4da8-840e-f329c0f1b732-00-wk2is7bchmpu.worf.replit.dev/atualizar-email');
+        'https://13359055-906e-4585-9ab1-eb88fc2281f3-00-fdifq982mbt.worf.replit.dev/atualizar-email');
 
     try {
       final response = await http.put(

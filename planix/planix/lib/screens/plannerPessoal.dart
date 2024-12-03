@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:planix/components/switchButton.dart';
 import 'package:planix/components/textStyle.dart';
+import 'package:planix/controllers/userController.dart';
 import 'package:planix/screens/calendario.dart';
 import 'package:planix/screens/listaMetas.dart';
 import 'package:planix/screens/perfil.dart';
@@ -13,6 +14,8 @@ class PlannerPessoal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = UserController.instance;
+    final String nomeUsuario = userController.getNomeUsuario();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -45,7 +48,7 @@ class PlannerPessoal extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Olá, Débora",
+              "Olá, ${nomeUsuario.isNotEmpty ? nomeUsuario : 'Usuário'}",
               style: txtDonglePreto(45),
             ),
             Text(
