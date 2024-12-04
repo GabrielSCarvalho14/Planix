@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:planix/components/textStyle.dart';
+import 'package:planix/components/textStyle.dart'; 
 
 class CardAzul extends StatefulWidget {
   const CardAzul({super.key});
@@ -241,10 +241,10 @@ Widget CardAzulTroca(bool isPaga, String conta, String data, double largura, dou
           )));
 }
 
-Widget CardCinza(String imagem, String texto) {
+Widget CardCinza(String imagem, String texto, double largura, double altura) {
   return SizedBox(
-      width: 177,
-      height: 147,
+      width: largura,
+      height: altura,
       child: Card(
           color: const Color(0xffF8F8F8),
           elevation: 4,
@@ -267,6 +267,40 @@ Widget CardCinza(String imagem, String texto) {
                   child: Text(
                     texto,
                     style: txtPoppinsAzulBold(16),
+                  ),
+                )
+              ])));
+}
+
+Widget CardCinzaAlongado(String imagem, String texto, double largura, double altura) {
+  return SizedBox(
+      width: largura,
+      height: altura,
+      child: Card(
+          color: const Color(0xffF8F8F8),
+          elevation: 4,
+          margin: const EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0, left: 14.0),
+                    child: Image.asset(
+                      imagem,
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10.0, left: 14.0),
+                    child: Text(
+                      texto,
+                      style: txtPoppinsAzulBold(16),
+                    ),
                   ),
                 )
               ])));

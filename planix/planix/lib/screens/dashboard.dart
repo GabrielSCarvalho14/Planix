@@ -118,58 +118,41 @@ class Dashboard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   GestureDetector(
-                      // onTap: () {
-                      //   Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => const Perfil()),
-                      //   );
-                      // },
-                      child: CardCinza(
-                          'assets/uis_chart.png', 'Balanço\neconômico')),
-                  GestureDetector(
-                    onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Vencimentos()),
-                        );
-                      },
-                    child: CardCinza(
-                        'assets/solar_danger-bold.png', 'Vencimentos\ngerais'),
-                  )
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    onTap: () {
+                      onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const Ganhos()),
                         );
                       },
-                      child: CardCinza(
-                          'assets/credit_card_heart.png', 'Ganhos e\nlucros')),
+                      child: CardCinza('assets/credit_card_heart.png',
+                          'Ganhos e\nlucros', 182, 162)),
                   GestureDetector(
                     onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Gastos()),
-                        );
-                      },
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Gastos()),
+                      );
+                    },
                     child: CardCinza('assets/fluent_money-off-24-filled.png',
-                        'Gastos e\ndespesas'),
+                        'Gastos e\ndespesas', 182, 162),
                   )
                 ],
               ),
             ),
+            Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Vencimentos()),
+                    );
+                  },
+                  child: CardCinzaAlongado('assets/solar_danger-bold.png',
+                      'Vencimentos gerais', 343, 140),
+                )),
             const SizedBox(height: 60),
             SwitchButton(isSwitched: false)
           ],
